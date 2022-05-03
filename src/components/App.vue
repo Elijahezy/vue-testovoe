@@ -4,8 +4,8 @@
 </template>
 
 <script>
-import Form from './components/Form.vue';
-import ItemsList from './components/ItemsList.vue';
+import Form from './Form.vue';
+import ItemsList from './ItemsList.vue';
 
 export default {
   name: 'App',
