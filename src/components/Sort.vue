@@ -1,18 +1,41 @@
 <template>
   <div class="sort">
-    <button type="button" @click="sortByMinPrice">MIN</button>
-    <button type="button" @click="sortByMaxPrice">MAX</button>
-    <button type="button" @click="sortByName">NAME</button>
+    <button
+      :class="{ active: sortKey === 'minPrice' }"
+      type="button"
+      @click="setSortType('minPrice')"
+    >
+      MIN
+    </button>
+    <button
+      :class="{ active: sortKey === 'maxPrice' }"
+      type="button"
+      @click="setSortType('maxPrice')"
+    >
+      MAX
+    </button>
+    <button
+      :class="{ active: sortKey === 'name' }"
+      type="button"
+      @click="setSortType('name')"
+    >
+      NAME
+    </button>
   </div>
 </template>
 
 <script>
-import { mapGetters, mapActions } from 'vuex';
+import { mapActions, mapMutations, mapGetters } from 'vuex';
 export default {
   name: 'FilterV',
   computed: {
-    ...mapGetters('data', ['items']),
     ...mapActions('data', ['sortByMinPrice', 'sortByMaxPrice', 'sortByName']),
+
+    ...mapGetters('data', ['sortKey']),
+  },
+
+  methods: {
+    ...mapMutations('data', ['setSortType']),
   },
 };
 </script>
@@ -24,6 +47,11 @@ export default {
   gap: 2rem;
   margin: 3rem 1rem;
   align-self: flex-start;
+}
+
+.active {
+  background-color: #7bae73;
+  color: white;
 }
 
 .sort button {

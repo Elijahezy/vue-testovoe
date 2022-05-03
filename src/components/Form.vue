@@ -59,7 +59,11 @@ export default {
   },
   computed: {
     isFormDisabled() {
-      return this.item.name.length === 0 || this.item.price.length === 0;
+      return (
+        this.item.name.length === 0 ||
+        this.item.price.length === 0 ||
+        this.item.url.length === 0
+      );
     },
   },
 

@@ -3,7 +3,12 @@
     <Sort />
 
     <transition-group name="list" tag="ul">
-      <Item v-for="(item, key) in items" :key="key" :item="item" class="item" />
+      <Item
+        v-for="(item, key) in sortedItems"
+        :key="key"
+        :item="item"
+        class="item"
+      />
     </transition-group>
   </div>
 </template>
@@ -15,7 +20,7 @@ import { mapGetters } from 'vuex';
 export default {
   name: 'ItemsList',
   computed: {
-    ...mapGetters('data', ['items']),
+    ...mapGetters('data', ['items', 'sortedItems']),
   },
   components: {
     Item,
