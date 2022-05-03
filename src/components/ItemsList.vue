@@ -3,7 +3,7 @@
     <Sort />
 
     <transition-group name="list" tag="ul">
-      <Item v-for="(item, key) in items" :key="key" :item="item" />
+      <Item v-for="(item, key) in items" :key="key" :item="item" class="item" />
     </transition-group>
   </div>
 </template>
@@ -33,6 +33,10 @@ export default {
 .list-leave-to {
   opacity: 0;
   transform: translateY(30px);
+}
+
+.item-move {
+  transition: transform 3s;
 }
 
 .items-list {

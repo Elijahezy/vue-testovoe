@@ -53,12 +53,12 @@ export default {
 
 .item-img {
   max-width: 100%;
+  width: 100%;
   height: 200px;
   border-top-left-radius: 4px;
   border-top-right-radius: 4px;
-  object-fit: auto;
+  object-fit: cover;
   background-color: #b8b8b8;
-  overflow: hidden;
 }
 
 .item-name {

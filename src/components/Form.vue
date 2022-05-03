@@ -27,7 +27,6 @@
         required
         v-model="item.url"
         autocomplete="off"
-        maxlength="30"
       />
       <label for="price">Цена товара</label>
       <input
@@ -37,6 +36,7 @@
         required
         v-model="item.price"
         autocomplete="off"
+        maxlength="30"
       />
       <button type="submit" :disabled="isFormDisabled">Добавить товар</button>
     </form>
